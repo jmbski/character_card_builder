@@ -1,0 +1,204 @@
+
+# 2025-04-29 07:21:53.223052
++len(dir(QtWidgets))
+
+# 2025-04-29 07:23:17.822774
++import inspect
+
+# 2025-04-29 07:24:57.925731
++names = [n for n in dir(QtWidgets) if n.startswith("Q")]
+
+# 2025-04-29 07:25:00.813713
++len(names)
+
+# 2025-04-29 07:25:04.693638
++names[0]
+
+# 2025-04-29 07:25:32.525414
++n1 = [n for n in names if not n.startswith("QAbstract")]
+
+# 2025-04-29 07:25:35.333307
++len(n1)
+
+# 2025-04-29 07:25:39.789229
++n1[0]
+
+# 2025-04-29 07:25:44.149575
++n1[0:10]
+
+# 2025-04-29 07:26:48.268979
++n2 = [n for n in n1 if inspect.isclass(getattr(QtWidgets, n))]
+
+# 2025-04-29 07:26:51.508853
++len(n2)
+
+# 2025-04-29 07:29:12.700082
++type(QtWidgets.QPushButton)
+
+# 2025-04-29 07:30:13.596227
++types = {type(getattr(QtWidgets, n)) for n in n2}
+
+# 2025-04-29 07:30:16.436027
++types
+
+# 2025-04-29 07:30:55.443476
++"QPushButton" in QtWidgets
+
+# 2025-04-29 07:31:09.035212
++"QPushButton" in dir(QtWidgets)
+
+# 2025-04-29 07:33:50.145982
++hasattr(QtWidgets, "QPushButton")
+
+# 2025-04-29 10:06:33.207769
++utils.detect_format(wpp_basic)
+
+# 2025-04-29 10:06:40.271108
++utils.detect_format(wpp_bracket)
+
+# 2025-04-29 10:06:48.423193
++utils.detect_format(json_str)
+
+# 2025-04-29 10:07:01.711119
++utils.detect_format(sbrackets)
+
+# 2025-04-29 10:07:48.455001
++utils.detect_format(json_str)
+
+# 2025-04-29 10:07:56.374712
++json_str
+
+# 2025-04-29 10:08:05.678655
++import json
+
+# 2025-04-29 10:08:11.542546
++json.loads(json_str)
+
+# 2025-04-29 10:08:28.654884
++import json
+
+# 2025-04-29 10:08:31.446467
++json.loads(json_str)
+
+# 2025-04-29 10:09:13.134044
++import json
+
+# 2025-04-29 10:09:23.502073
++json.loads(json_str)
+
+# 2025-04-29 10:09:29.862045
++utils.detect_format(json_str)
+
+# 2025-04-29 10:09:54.965869
++utils.detect_format(wpp_basic)
+
+# 2025-04-29 10:09:59.925711
++utils.detect_format(wpp_bracket)
+
+# 2025-04-29 10:12:18.796888
++utils.detect_format(wpp_unknown)
+
+# 2025-04-29 10:24:30.345038
++resp = o_client.parse_character_card(card_text=wpp_unknown)
+
+# 2025-04-29 11:02:57.738605
++resp
+
+# 2025-04-29 11:04:55.275056
++resp = o_client.parse_character_card(card_text=wpp_unknown)
+
+# 2025-04-29 11:22:31.867999
++resp
+
+# 2025-04-29 12:43:52.569695
++resp = o_client.parse_character_card(card_text=wpp_unknown)
+
+# 2025-04-29 12:44:15.552713
++resp
+
+# 2025-04-29 14:17:30.271708
++from card_builder.ooba.client import get_blank_card
+
+# 2025-04-29 14:17:37.198930
++data = get_blank_card()
+
+# 2025-04-29 14:18:21.318615
++from card_builder.ooba.client import get_blank_card
+
+# 2025-04-29 14:18:22.414341
++data = get_blank_card()
+
+# 2025-04-29 14:18:24.718547
++data
+
+# 2025-04-29 14:20:28.214109
++from card_builder.ooba.client import get_blank_card
+
+# 2025-04-29 14:20:29.413964
++data
+
+# 2025-04-29 14:20:31.877873
++data = get_blank_card()
+
+# 2025-04-29 14:20:33.950138
++data
+
+# 2025-04-29 14:27:12.563936
++test_card
+
+# 2025-04-29 14:27:34.707079
++desc = test_card.get("description")
+
+# 2025-04-29 14:27:36.243180
++desc
+
+# 2025-04-29 14:28:20.602640
++desc_json = utils.parse_character_card(desc)
+
+# 2025-04-29 14:28:26.858458
++desc_json
+
+# 2025-04-29 14:30:38.402179
++desc_json = utils.parse_character_card(desc)
+
+# 2025-04-29 14:30:43.113778
++desc_json
+
+# 2025-04-29 14:31:14.625943
++desc_json = utils.parse_character_card(desc)
+
+# 2025-04-29 14:32:19.321294
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 14:46:53.259823
++desc_json
+
+# 2025-04-29 14:47:15.396082
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 14:50:22.074356
++desc_json
+
+# 2025-04-29 14:52:23.986740
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 14:57:03.159742
++desc_json
+
+# 2025-04-29 14:59:14.119936
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 15:01:51.246696
++desc_json
+
+# 2025-04-29 15:03:28.758410
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 15:03:46.366058
++desc_json
+
+# 2025-04-29 15:05:01.814352
++desc_json = o_client.parse_character_card(desc)
+
+# 2025-04-29 15:08:49.388403
++desc_json

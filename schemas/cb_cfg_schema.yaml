@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema#
+type: object
+description: Schema for the card_builder UI application for SillyTavern
+properties: 
+  tabs:
+    type: array
+    description: List of tab definitions
+    items: 
+      $ref: "#/definitions/TabSchema"
+definitions:
+  TabSchema:
+    type: object
+    description: Defines the property schemas for a specific tab in the UI
+    properties: 
+      tab_name:
+        type: string
+        description: Name for the tab to be displayed
+      property_defs:
+        type: object
+        description: Property schemas for the tab
+        patternProperties: 
+          ".+":
+            $ref: "#/definitions/PropertyDef"
+      value_paths:
+        type: array
+        description: If provided, the tab object output will be converted to stringified JSON and passed to any of the listed path values
+        items: 
+          type: string
+  PropertyDef:
+    type: object
+    description: Defines how a given character card property is defined int he UI. Name should match the character card JSON property name
+    properties: 
+      data_type:
+        type: string
+        description: What type of input value is to be expected for the property
+        enum:
+          - str
+          - bool
+          - float
+          - int
+          - list
+          - dict
+        default: str
+      default:
+        description: What the default value is for the property, if any
+      label:
+        type: string
+        description: Label to use for the property in the UI
+      widget:
+        type: string
+        description: Name of the widget to be used for the property. If not defined, UI will guess based on data_type
+      key:
+        type: string
+        description: Explicit value for the properties card schema key, i.e., property name
+      value_paths:
+        type: array
+        description: List of dot-separated paths to pipe values to in the card JSON output. If blank, will just be 'key'
+        items: 
+          type: string
+        examples:
+          - "- name\n- data.name"
